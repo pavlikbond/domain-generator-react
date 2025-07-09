@@ -47,6 +47,9 @@ function App() {
       });
 
       if (!response.ok) {
+        if (response.status === 503) {
+          throw new Error("The model is waking up, please wait a little bit and try again");
+        }
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
