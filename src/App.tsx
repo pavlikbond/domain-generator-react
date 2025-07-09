@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Send, Loader2, AlertCircle, CheckCircle } from "lucide-react";
+import { Sparkles, Loader2, AlertCircle, CheckCircle } from "lucide-react";
 import DomainResult from "./DomainResult";
 
 interface DomainSuggestion {
@@ -71,7 +71,7 @@ function App() {
       <div className="max-w-4xl mx-auto mt-12">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-6xl font-bold text-slate-800 mb-4">Domain Generator</h1>
+          <h1 className="text-4xl lg:text-6xl font-bold text-slate-800 mb-4">Domain Generator</h1>
           <p className="text-xl text-slate-600">Describe your business and get domain suggestions</p>
         </div>
 
@@ -100,7 +100,7 @@ function App() {
                   className="btn w-full text-lg h-14 bg-slate-800 hover:bg-slate-700 text-white"
                   disabled={isLoading || !businessDescription.trim()}
                 >
-                  {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
+                  {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Sparkles className="w-5 h-5" />}
                   Generate Domains
                 </button>
               </div>
