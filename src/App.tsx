@@ -19,9 +19,7 @@ function App() {
   const [result, setResult] = useState("");
   const [domains, setDomains] = useState<string[]>([]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const handleGenerate = async () => {
     if (!businessDescription.trim()) {
       setError("Please enter a business description");
       return;
@@ -81,7 +79,7 @@ function App() {
         {/* Main Form Card */}
         <div className="card bg-white shadow-xl border border-slate-200">
           <div className="card-body p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="space-y-6">
               {/* Input Field */}
               <div className="form-control w-full grid gap-4">
                 <label className="label">
@@ -96,18 +94,20 @@ function App() {
                 />
               </div>
 
-              {/* Submit Button */}
-              <div className="form-control">
-                <button
-                  type="submit"
-                  className="btn w-full text-lg h-14 bg-slate-800 hover:bg-slate-700 text-white disabled:bg-slate-600 disabled:opacity-80 disabled:cursor-not-allowed"
-                  disabled={isLoading || !businessDescription.trim()}
-                >
+              {/* Generate Button */}
+
+              <button
+                type="button"
+                onClick={handleGenerate}
+                className="btn w-full text-lg h-14 bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center gap-2 "
+                disabled={isLoading || !businessDescription.trim()}
+              >
+                <div className="w-5 h-5 flex items-center justify-center">
                   {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Sparkles className="w-5 h-5" />}
-                  Generate Domains
-                </button>
-              </div>
-            </form>
+                </div>
+                <span> Generate Domains</span>
+              </button>
+            </div>
 
             {/* Error Display */}
             {error && (
