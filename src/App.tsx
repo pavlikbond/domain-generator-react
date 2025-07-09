@@ -88,7 +88,7 @@ function App() {
                   <span className="label-text text-3xl font-semibold text-slate-700">Business Description</span>
                 </label>
                 <textarea
-                  className="textarea textarea-bordered h-32 resize-none text-lg w-full border-slate-300 focus:border-slate-600 focus:ring-slate-600"
+                  className="textarea textarea-bordered h-32 resize-none text-lg w-full border-slate-300 focus:border-slate-600 focus:ring-slate-600 bg-white text-slate-700 placeholder-slate-400"
                   placeholder="Describe your business, products, or services..."
                   value={businessDescription}
                   onChange={(e) => setBusinessDescription(e.target.value)}
@@ -100,7 +100,7 @@ function App() {
               <div className="form-control">
                 <button
                   type="submit"
-                  className="btn w-full text-lg h-14 bg-slate-800 hover:bg-slate-700 text-white"
+                  className="btn w-full text-lg h-14 bg-slate-800 hover:bg-slate-700 text-white disabled:bg-slate-600 disabled:opacity-80 disabled:cursor-not-allowed"
                   disabled={isLoading || !businessDescription.trim()}
                 >
                   {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Sparkles className="w-5 h-5" />}

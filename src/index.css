@@ -1,7 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
-@import "tailwindcss";
-@plugin "daisyui";
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+@import "daisyui";
 
 * {
   font-family: "Ubuntu", sans-serif;
+}
+
+/* Override DaisyUI textarea styling for better mobile experience */
+.textarea {
+  background-color: white !important;
+  color: #374151 !important; /* text-gray-700 */
+}
+
+.textarea::placeholder {
+  color: #9ca3af !important; /* text-gray-400 */
+}
+
+/* Ensure button is always visible */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  display: block !important;
 }
