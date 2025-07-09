@@ -99,7 +99,7 @@ function App() {
               <button
                 type="button"
                 onClick={handleGenerate}
-                className="btn w-full text-lg h-14 bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center gap-2 "
+                className="btn w-full text-lg h-14 bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center gap-2 disabled:text-slate-400 disabled:border-2 disabled:border-slate-400"
                 disabled={isLoading || !businessDescription.trim()}
               >
                 <div className="w-5 h-5 flex items-center justify-center">
